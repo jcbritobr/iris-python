@@ -5,22 +5,18 @@ import seaborn as sn
 import numpy as np
 import pandas as pd
 
-# load dataset
+# Load dataset
 # %%
 iris_df = pd.read_csv("Iris.csv")
 iris_df.head()
 
+# Load datasets by species
 # %%
 virginica_df = iris_df[iris_df['Species'] == 'Iris-virginica']
 setosa_df = iris_df[iris_df['Species'] == 'Iris-setosa']
 versicolor_df = iris_df[iris_df['Species'] == 'Iris-versicolor']
-# %%
 
-ax = sn.scatterplot(x="PetalWidthCm", y="PetalLengthCm",
-                    data=iris_df, hue="Species")
-ax.set(xlabel="Petal Width (cm)", ylabel="Petal Length (cm)")
-
-
+# Plot functions
 # %%
 
 def generate_scatter(x_field: str, y_field: str, xlabel: str, ylabel: str, dataset: pd.DataFrame):
@@ -45,6 +41,8 @@ def generate_histograms(title: str, dataset: pd.DataFrame):
 
     ptlenght_h = sn.histplot(ax=axes[1, 1], data=dataset, x='PetalLengthCm')
     ptlenght_h.set(xlabel="Petal Length (cm)", ylabel="")
+
+# Plot data
 # %%
 
 generate_scatter("PetalWidthCm", "PetalLengthCm", "Petal Width (cm)", "Petal Length (cm)", iris_df)
