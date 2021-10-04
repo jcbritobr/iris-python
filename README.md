@@ -1,4 +1,6 @@
 # Iris Data Analysis
+![](plots/iris-species.png)
+
 Simple data analysis using iris dataset, pandas, numpy, matplotlib and seaborn.
 
 ![](plots/scatter-petal-width-length.png)
